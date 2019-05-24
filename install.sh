@@ -3,11 +3,12 @@
 ##
 ## install.sh
 ##
-## Installation script for cowsay.
+## Installation script for cowseii.
 ##
 ## $Id: install.sh,v 1.5 1999/11/01 20:19:21 tony Exp $
 ##
-## This file is part of cowsay.  (c) 1999 Tony Monroe.
+## This file was part of cowsay.  (c) 1999 Tony Monroe.
+## It is now part of cowseii.  (c) 2019 David Laffranchi.
 ##
 
 rcs_id='$Id: install.sh,v 1.5 1999/11/01 20:19:21 tony Exp $'
@@ -16,7 +17,7 @@ filelist='cows'
 
 cat <<DOG
 ===================
-cowsay Installation
+cowseii Installation
 ===================
 
 Searching for useful perl executables...
@@ -41,7 +42,7 @@ for perl in $perls; do
 		goodperls="$goodperls $perl"
 	fi
 done
-echo The following perl executables will run cowsay:
+echo The following perl executables will run cowseii:
 echo $goodperls
 echo I recommend the latest stable perl you can find.
 set $goodperls
@@ -70,13 +71,13 @@ echo s,%BANGPERL%,!$usethisperl,\; > install.pl
 echo s,%PREFIX%,$PREFIX,\; >> install.pl
 set -x
 mkdir -p $PREFIX/bin || (mkdir $PREFIX; mkdir $PREFIX/bin)
-$usethisperl -p install.pl cowsay > $PREFIX/bin/cowsay
-chmod a+x $PREFIX/bin/cowsay
-ln -s cowsay $PREFIX/bin/cowthink
+$usethisperl -p install.pl cowseii > $PREFIX/bin/cowseii
+chmod a+x $PREFIX/bin/cowseii
+ln -s cowseii $PREFIX/bin/cowthink
 mkdir -p $PREFIX/man/man1 || ($mkdir $PREFIX; mkdir $PREFIX/man; mkdir $PREFIX/man/man1)
-$usethisperl -p install.pl cowsay.1 > $PREFIX/man/man1/cowsay.1
-chmod a+r $PREFIX/man/man1/cowsay.1
-ln -s cowsay.1 $PREFIX/man/man1/cowthink.1
+$usethisperl -p install.pl cowseii.1 > $PREFIX/man/man1/cowseii.1
+chmod a+r $PREFIX/man/man1/cowseii.1
+ln -s cowseii.1 $PREFIX/man/man1/cowthink.1
 mkdir -p $PREFIX/share/cows || (mkdir $PREFIX; mkdir $PREFIX/share; mkdir $PREFIX/share/cows)
 tar -cf - $filelist | (cd $PREFIX/share && tar -xvf -)
 set +x
