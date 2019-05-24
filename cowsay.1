@@ -1,18 +1,19 @@
 .\" 
-.\" cowsay.1
+.\" cowseii.1
 .\"
 .\" $Id: cowsay.1,v 1.4 1999/11/04 19:50:40 tony Exp $
 .\"
-.\" This file is part of cowsay.  (c) 1999 Tony Monroe.
+.\" This file was part of cowsay.  (c) 1999 Tony Monroe.
+.\" It is now part of cowseii.  (c) 2019 David Laffranchi.
 .\"
-.ds Nm Cowsay
-.ds nm cowsay
+.ds Nm Cowseii
+.ds nm cowseii
 .ds Vn 3.02
 .TH \*(nm 1 "$Date: 1999/11/04 19:50:40 $"
 .SH NAME
 \*(nm/cowthink \- configurable speaking/thinking cow (and a bit more)
 .SH SYNOPSIS
-cowsay
+cowseii
 .RB [ \-e 
 .IR eye_string ]
 .RB [ \-f 
@@ -26,7 +27,7 @@ cowsay
 .IR column ]
 .RB [ \-bdgpstwy ]
 .SH DESCRIPTION
-.I Cowsay
+.I Cowseii
 generates an ASCII picture of a cow saying something provided by the
 user.  If run with no arguments, it accepts standard input, word-wraps
 the message given at about 40 columns, and prints the cow saying the
@@ -130,6 +131,11 @@ interpolation.  The name of a cowfile should end with
 .BR .cow ,
 otherwise it is assumed not to be a cowfile.  Also, at-signs (``@'')
 must be backslashed because that is what Perl 5 expects.
+If you use the tag .B TEXT ,
+your user-provided message will replace that tag with no further
+decoration. This can have unexpected results depending on the
+length of the message and design of the .BR .cow ,
+so use this design wisely.
 .PP
 .SH COMPATIBILITY WITH OLDER VERSIONS
 .PP
@@ -141,7 +147,7 @@ where you got the older versions, since I didn't exactly put them
 up for world-wide access.
 .PP
 Oh, just so you know, this manual page documents version \*(Vn of
-cowsay.
+cowseii.
 .SH ENVIRONMENT
 The COWPATH environment variable, if present, will be used to search
 for cowfiles.  It contains a colon-separated list of directories,
