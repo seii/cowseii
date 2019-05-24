@@ -15,14 +15,15 @@ What if it were tweaked a little to allow free-form text, while maintaining all 
              /___\
 ```
 
-I am not a Perl programmer, and this tweak is not intended as a new version of "cowsay". However, it does maintain compatibility completely as far as I can tell.
+I am not a Perl programmer, and this tweak is not intended as a new version of "cowsay". However, it does maintain compatibility completely as far as I can tell. Other than the binary name changing, you shouldn't notice any difference until using a `.cow` file which contains the `TEXT` tag.
 
 ## USAGE
 
 Install as shown in "INSTALL" file.
 For use with [https://www.ansible.com/](Ansible) playbooks, alter your `ANSIBLE_COW_PATH` variable [1] to point to the `cowseii` binary.
+For a more Ansible-friendly display, set `ANSIBLE_COW_SELECTION` to `sword.cow`.
 
-**NOTE:** Cowseii will try not to overwrite any existing installs of `cowsay` or any existing `.cow` files in the default locations. Any `.cow` files that were not already present, however, will be installed.
+**NOTE:** Cowseii will try not to overwrite any existing installs of `cowsay`, symlink itself to `cowthink`, or overwrite any existing `.cow` files in the default locations. Any `.cow` files that were not already present, however, will be installed.
 
 
 For the terms and conditions of use, consult the LICENSE file in
