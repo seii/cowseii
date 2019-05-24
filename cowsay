@@ -67,7 +67,7 @@ $Text::Wrap::columns = $opts{'W'};
 &construct_balloon;
 &construct_face;
 &get_cow;
-print @balloon_lines;
+&balloon_or_text;
 print $the_cow;
 
 sub list_cowfiles {
@@ -107,6 +107,14 @@ sub maxlength {
 	$m = $l if ($l > $m);
     }
     return $m;
+}
+
+sub balloon_or_text {
+    if ($the_cow =~ /TEXT/) {
+        $the_cow =~ s/TEXT/@message/g;
+    }else {
+        print @balloon_lines;
+    }
 }
 
 sub construct_balloon {
