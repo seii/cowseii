@@ -73,11 +73,15 @@ set -x
 mkdir -p $PREFIX/bin || (mkdir $PREFIX; mkdir $PREFIX/bin)
 $usethisperl -p install.pl cowseii > $PREFIX/bin/cowseii
 chmod a+x $PREFIX/bin/cowseii
-#ln -s cowseii $PREFIX/bin/cowthink
+if ! [ -e $PREFIX/bin/cowthink ]; then
+   ln -s cowseii $PREFIX/bin/cowthink
+fi
 mkdir -p $PREFIX/man/man1 || ($mkdir $PREFIX; mkdir $PREFIX/man; mkdir $PREFIX/man/man1)
 $usethisperl -p install.pl cowseii.1 > $PREFIX/man/man1/cowseii.1
 chmod a+r $PREFIX/man/man1/cowseii.1
-#ln -s cowseii.1 $PREFIX/man/man1/cowthink.1
+if ! [ -e $PREFIX/man/man1/cowthink.1 ]; then
+   ln -s cowseii.1 $PREFIX/man/man1/cowthink.1
+fi
 mkdir -p $PREFIX/share/cows || (mkdir $PREFIX; mkdir $PREFIX/share; mkdir $PREFIX/share/cows)
 tar -cf - $filelist | (cd $PREFIX/share && tar --skip-old-files -xvf -)
 set +x
