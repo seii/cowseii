@@ -8,4 +8,3 @@ cows/*			Support files used by cowseii.
 cowseii			Main cowseii executable.
 cowseii.1		Main cowseii manual page.
 install.sh		cowseii installation script.
-pgp_public_key.txt	Verify the signature file with this key.
