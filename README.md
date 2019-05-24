@@ -21,10 +21,8 @@ I am not a Perl programmer, and this tweak is not intended as a new version of "
 
 Install as shown in "INSTALL" file. Afterwards you can test with the command `cowseii -f sword.cow Man, that's pretty sharp!` in your terminal.
 
-To use cowseii with [https://www.ansible.com/](Ansible) playbooks, alter your `ANSIBLE_COW_PATH` variable [1] to point to the `cowseii` binary.
+To use cowseii with [https://www.ansible.com/](Ansible) playbooks, alter your `ANSIBLE_COW_PATH` [variable](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-cow-path) to point to the `cowseii` binary.
 For a more Ansible-friendly display, also set `ANSIBLE_COW_SELECTION` to `sword.cow`.
-
-[1]: https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-cow-path
 
 ## Respecting cowsay installs
 Cowseii will try not to overwrite any existing installs of `cowsay`. This includes the following:
